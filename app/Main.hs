@@ -39,4 +39,3 @@ solver firstDiv secondDiv upperbound
     -- ^ If divisible by just the second divisor then print "Door 3"
     | otherwise = show upperbound
     -- ^ If not divisible by either divisor then print the dividend itself.
-
