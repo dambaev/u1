@@ -19,8 +19,12 @@ main = do
                 upperBound:: Int = read upperboundArg
                 helper = solver firstDiv secondDiv -- closure to solver
             -- for every number in range, print answer
-            forM_ [ 0 .. upperBound ] $ \current -> do
-                putStrLn $ helper current
+            case () of
+                _| firstDiv == 0 -> putStrLn "error: firstDiviser is zero"
+                _| secondDiv == 0 -> putStrLn "error: secondDiviser is zero"
+                _| otherwise -> do
+                    forM_ [ 0 .. upperBound ] $ \current -> do
+                        putStrLn $ helper current
         _ -> usage
 
 {-|
